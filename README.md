@@ -18,38 +18,19 @@ claude-config/
 
 ## 🚀 Setup
 
-### Option 1: Symlink to global .claude directory (recommended for cross-project use)
+### Initial Setup on New Machine
 
 ```bash
-# Create global Claude config directory if it doesn't exist
+# Clone the repo
+cd ~/git
+git clone https://github.com/mariusfa/claude-config.git
+
+# Symlink commands to global .claude directory
 mkdir -p ~/.claude
-
-# Symlink commands
 ln -s ~/git/claude-config/commands ~/.claude/commands
-
-# Symlink instructions
-ln -s ~/git/claude-config/instructions ~/.claude/instructions
 ```
 
-### Option 2: Symlink to project-specific .claude directory
-
-```bash
-# In your project root
-mkdir -p .claude
-
-# Symlink commands
-ln -s ~/git/claude-config/commands .claude/commands
-
-# Or copy specific commands you need
-cp ~/git/claude-config/commands/my-reviews.md .claude/commands/
-```
-
-### Option 3: Add to .clauderc in your project
-
-```bash
-# In your project root
-echo "source: ~/git/claude-config/instructions/code-review.md" > .clauderc
-```
+That's it! Now all commands are available in any Claude Code session.
 
 ## 📝 Available Commands
 
