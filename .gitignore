@@ -1,0 +1,18 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Personal/local overrides
+local/
+*.local.md
+
+# Sensitive data
+*.env
+secrets/
