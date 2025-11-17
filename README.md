@@ -8,12 +8,10 @@ Shared configuration files for Claude Code across different machines and project
 claude-config/
 ├── commands/           # Custom slash commands
 │   ├── my-reviews.md   # Show PRs requesting your review
-│   ├── review-pr.md    # Deep dive review of a specific PR
-│   └── team-prs.md     # Overview of all team PRs
-├── instructions/       # Instruction files (.clauderc content)
-│   └── code-review.md  # Code review guidelines
-├── hooks/             # Shell hooks for events
-└── examples/          # Example workflows and templates
+│   └── verify.md       # Pre-commit verification (lint, build, test)
+├── instructions/       # Instruction files (currently unused)
+├── hooks/              # Shell hooks for events (currently unused)
+└── examples/           # Example workflows and templates (currently unused)
 ```
 
 ## 🚀 Setup
