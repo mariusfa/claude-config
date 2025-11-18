@@ -22,5 +22,5 @@ Parameters (optional):
 
 Example:
 ```bash
-~/git/claude-config/scripts/gh-project-tasks.sh "Team aksjehandel" "sparebank1utvikling"
+~/git/claude-config/scripts/gh-project-tasks.sh "My Project Name" "my-org-or-username"
 ```

@@ -6,12 +6,15 @@ Shared configuration files for Claude Code across different machines and project
 
 ```
 claude-config/
-├── commands/           # Custom slash commands
-│   ├── my-reviews.md   # Show PRs requesting your review
-│   └── verify.md       # Pre-commit verification (lint, build, test)
-├── instructions/       # Instruction files (currently unused)
-├── hooks/              # Shell hooks for events (currently unused)
-└── examples/           # Example workflows and templates (currently unused)
+├── commands/                 # Custom slash commands
+│   ├── gh-project-tasks.md   # Show assigned GitHub project tasks
+│   ├── my-reviews.md         # Show PRs requesting your review
+│   └── verify.md             # Pre-commit verification (lint, build, test)
+├── scripts/                  # Helper scripts for commands
+│   └── gh-project-tasks.sh   # GitHub project tasks fetcher
+├── instructions/             # Instruction files (currently unused)
+├── hooks/                    # Shell hooks for events (currently unused)
+└── examples/                 # Example workflows and templates (currently unused)
 ```
 
 ## 🚀 Setup
@@ -32,20 +35,26 @@ That's it! Now all commands are available in any Claude Code session.
 
 ## 📝 Available Commands
 
+### `/gh-project-tasks`
+Fetch and display active tasks from a GitHub project board that are assigned to you. Automatically filters out completed tasks and groups by status.
+
+**Setup:** Set environment variables (add to `~/.bashrc` or `~/.zshrc`):
+```bash
+export GH_DEFAULT_PROJECT="Your Project Name"
+export GH_DEFAULT_PROJECT_OWNER="your-org-or-username"
+```
+
+**Usage:** `/gh-project-tasks` or `/gh-project-tasks "Project Name" "owner"`
+
 ### `/my-reviews`
 Quickly see all PRs where you're requested as a reviewer. Sorted by age with visual indicators for urgent reviews.
 
-**Usage:** Just type `/my-reviews` in Claude Code
+**Usage:** `/my-reviews`
 
-### `/review-pr`
-Perform a comprehensive code review of a specific PR with automated checks and structured feedback.
+### `/verify`
+Run pre-commit verification checks (linting, building, testing) before committing code.
 
-**Usage:** `/review-pr [PR-URL or number]`
-
-### `/team-prs`
-Get a team-wide overview of all open PRs, grouped by status.
-
-**Usage:** `/team-prs`
+**Usage:** `/verify`
 
 ## 🔧 Customization
 
@@ -77,6 +86,6 @@ That's it! All your machines will have the same commands available.
 - Use clear, step-by-step instructions
 - Commands can use any CLI tools (gh, git, jq, etc.)
 
-## 🤝 Contributing
+## 📚 Additional Resources
 
-Feel free to add your own useful commands and share them with the team!
+See `CLAUDE.md` for detailed guidance on the repository structure and how Claude Code uses these configurations.
